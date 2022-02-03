@@ -1,7 +1,7 @@
 import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../constants/actionTypes';
 
 
-export default (posts = [], action) => {
+const postReducer = (posts = [], action) => {
     switch(action.type) {
         case UPDATE:
             return posts.map((post) => post._id === action.payload._id ? action.payload : post);
@@ -15,3 +15,5 @@ export default (posts = [], action) => {
             return posts;
     }
 };
+
+export default postReducer;
